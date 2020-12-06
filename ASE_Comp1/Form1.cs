@@ -31,5 +31,10 @@ namespace ASE_Comp1
         {
 
         }
+
+        private void txt_MultiCmd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

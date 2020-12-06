@@ -51,6 +51,7 @@
             this.txt_MultiCmd.Name = "txt_MultiCmd";
             this.txt_MultiCmd.Size = new System.Drawing.Size(291, 229);
             this.txt_MultiCmd.TabIndex = 1;
+            this.txt_MultiCmd.TextChanged += new System.EventHandler(this.txt_MultiCmd_TextChanged);
             // 
             // txt_Cmd
             // 

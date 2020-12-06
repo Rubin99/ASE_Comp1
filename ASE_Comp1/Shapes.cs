@@ -7,19 +7,40 @@ using System.Threading.Tasks;
 
 namespace ASE_Comp1
 {
-    public abstract class Shapes 
+    abstract class Shapes:ShapeInterface
     {
-        /// Passing Graphic Value
+        protected Color colour; //shapes color
+        protected int x, y;
+        public Shapes()
+        {
+            colour = Color.Red;
+            x = y = 100;
+        }
 
-        /// <param name="g"></param>
-        public abstract void Draw(Graphics g);
+        public Shapes(Color colour, int x, int y)
+        {
+            this.colour = colour; // shapes color
+            this.x = x; // x pos
+            this.y = y; // y pos
+        }
 
-        /// passing the value to shape
+        // Declaring as abstract to implement them to the derived classes 
+        public abstract void draw(Graphics g);
+        public abstract double calcArea();
+        public abstract double calcPerimeter();
 
-        /// <param name="texturestyle">define texture</param>
-        /// <param name="bb">define properties of brush</param>
-        /// <param name="c">define color</param>
-        /// <param name="list">list of parameter</param>
-        public abstract void set(int texturestyle, Brush bb, Color c, params int[] list);
+        // Set is declared virtual so that it can be overriden by a specific class.
+        public virtual void set(Color colour, params int[] list)
+        {
+            this.colour = colour;
+            this.x = list[0];
+            this.y = list[1];
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + "   " + this.x + "   " + this.y + " : ";
+        }
+
     }
 }
