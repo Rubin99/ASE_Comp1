@@ -11,6 +11,8 @@ namespace ASE_Comp1
     {
         protected Color colour; //shapes color
         protected int x, y;
+        protected Point previousPoint;
+        protected Point currentPoint;
         public Shapes()
         {
             colour = Color.Red;
@@ -41,6 +43,10 @@ namespace ASE_Comp1
         {
             return base.ToString() + "   " + this.x + "   " + this.y + " : ";
         }
-
+        public void setPoint(Point previousPoint, Point currentPoint)
+        {
+            this.previousPoint = previousPoint;
+            this.currentPoint = currentPoint;
+        }
     }
 }
